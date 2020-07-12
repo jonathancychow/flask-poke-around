@@ -2,7 +2,7 @@
 name = "flask-poke-around"
 version = "0.1.0"
 description = ""
-authors = ["Jonathan Chow <jonathan.chow@mclaren.com>"]
+authors = ["Jonathan Chow <jonathan@cychow.co.uk>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
