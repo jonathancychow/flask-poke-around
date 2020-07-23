@@ -34,12 +34,12 @@ if not app.debug:
         app.logger.addHandler(mail_handler)
 
     root_path = Path(__file__)
-    print(__file__)
     log_path = root_path.parent / 'logs'
+
     if not log_path.exists():
         log_path.mkdir()
 
-    file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240,
+    file_handler = RotatingFileHandler(log_path/'microblog.log', maxBytes=10240,
                                        backupCount=10)
     file_handler.setFormatter(logging.Formatter(
         '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
