@@ -19,6 +19,9 @@ mail = Mail(app)
 bootstrap = Bootstrap(app)
 
 from app import routes, models, errors
+from app.api import bp as api_bp
+
+app.register_blueprint(api_bp, url_prefix='/api')
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -52,10 +55,10 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
 
-def create_app(config_class=Config):
-    app = Flask(__name__)
-
-    # ...
-
-    from app.api import bp as api_bp
-    app.register_blueprint(api_bp, url_prefix='/api')
+# def create_app(config_class=Config):
+#     app = Flask(__name__)
+#
+#     # ...
+#
+#     from app.api import bp as api_bp
+#     app.register_blueprint(api_bp, url_prefix='/api')
