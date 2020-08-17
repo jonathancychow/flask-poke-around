@@ -10,3 +10,15 @@ pip install poetry
 ```bash
 poetry install 
 ``` 
+
+## Token 
+Get token from the service
+```bash
+http --auth <username>:<password> POST http://localhost:5000/api/tokens
+``` 
+
+Get request with the token
+``` 
+http GET http://localhost:5000/api/users/3 "Authorization
+:Bearer somerandomwordsgohere"
+``` 
